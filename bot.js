@@ -80,6 +80,22 @@ DBS.loadMods = async function () {
     });
 };
 
+DBS.startBot = async function () {
+  await DBS.Bot.login(DBS.SettingsFile.token)
+    .then((value) => {
+      process.send('success');
+    })
+    .catch((e) => {
+      DBS.logError({
+        level: 'error',
+        message: 'Bot login: ' + e,
+      });
+      //process.send("Error: " + e);
+    });
+
+  DBS.CheckIfLoaded();
+};
+
 DBS.checkMessage = async function (message) {
   const prefix = DBS.SettingsFile.prefix;
   if (message.author.bot) return;
@@ -215,6 +231,8 @@ DBS.loadBot = async function () {
       message: 'Loading mods: ' + e,
     });
   });
+
+  await DBS.startBot();
 };
 
 DBS.Bot.on('message', (message) => DBS.checkMessage(message));
@@ -331,5 +349,3 @@ DBS.logError = async function (error) {
   process.send(error.message);
   console.log(error.message);
 };
-
-client.login(process.env.BOT_TOKEN);

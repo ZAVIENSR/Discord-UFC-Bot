@@ -62,8 +62,6 @@
           "inline": "true"
         }
       ],
-      "saveToVariable": "",
-      "saveToVariableType": "temp",
       "outputs": [
         {
           "label": "next response",
@@ -119,8 +117,6 @@
       "guid": "5053a44d-4a5e-460a-974d-da0cc07aac7c",
       "reactionFields": [],
       "embedfields": [],
-      "saveToVariable": "",
-      "saveToVariableType": "temp",
       "outputs": [
         {
           "label": "next response",
@@ -730,8 +726,6 @@
       "guid": "e5be13f9-9e14-496b-a375-61d4d7755ea5",
       "reactionFields": [],
       "embedfields": [],
-      "saveToVariable": "",
-      "saveToVariableType": "temp",
       "outputs": [
         {
           "label": "next response",
@@ -767,8 +761,6 @@
       "guid": "7eba8c8a-afa1-4c86-9af5-3ff384541117",
       "reactionFields": [],
       "embedfields": [],
-      "saveToVariable": "",
-      "saveToVariableType": "temp",
       "outputs": [
         {
           "label": "next response",
@@ -871,8 +863,6 @@
       "guid": "79b9951c-ecee-4dd9-8bad-00f040176d48",
       "reactionFields": [],
       "embedfields": [],
-      "saveToVariable": "",
-      "saveToVariableType": "temp",
       "outputs": [
         {
           "label": "next response",
