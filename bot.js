@@ -5,6 +5,7 @@ const path = require('path');
 const AntiSpam = require('discord-anti-spam');
 const winston = require('winston');
 const flatted = require('flatted');
+const client = new Discord.Client();
 
 process.send = process.send || function () {}; // avoid error when no parent process
 
@@ -190,22 +191,6 @@ DBS.callNextEventAction = async function (type, varsE, index) {
   DBS.EventHandler.Event_Handle(DBS, DBS.EventsFile, index, type, varsE);
 };
 
-DBS.startBot = async function () {
-  await DBS.Bot.login(DBS.SettingsFile.token)
-    .then((value) => {
-      process.send('success');
-    })
-    .catch((e) => {
-      DBS.logError({
-        level: 'error',
-        message: 'Bot login: ' + e,
-      });
-      //process.send("Error: " + e);
-    });
-
-  DBS.CheckIfLoaded();
-};
-
 DBS.LoadedGuilds = [];
 
 DBS.CheckIfLoaded = async function () {
@@ -230,7 +215,6 @@ DBS.loadBot = async function () {
       message: 'Loading mods: ' + e,
     });
   });
-  await DBS.startBot();
 };
 
 DBS.Bot.on('message', (message) => DBS.checkMessage(message));
@@ -347,3 +331,5 @@ DBS.logError = async function (error) {
   process.send(error.message);
   console.log(error.message);
 };
+
+client.login(process.env.BOT_TOKEN);
