@@ -1,0 +1,945 @@
+{
+  "nodes": [
+    {
+      "type": "command",
+      "name": "help",
+      "guid": "7942fe4c-dffa-4146-8cab-d254b3d80d5d",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "37eda463-a170-44f9-af54-61378ffc9294"
+          ]
+        }
+      ],
+      "x": 126,
+      "y": 112
+    },
+    {
+      "type": "command",
+      "name": "info",
+      "guid": "2224944a-561a-4fa1-824b-2f31ea37c836",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "5053a44d-4a5e-460a-974d-da0cc07aac7c"
+          ]
+        }
+      ],
+      "x": 149,
+      "y": 325
+    },
+    {
+      "type": "response",
+      "name": "help menu",
+      "guid": "37eda463-a170-44f9-af54-61378ffc9294",
+      "reactionFields": [],
+      "embedfields": [
+        {
+          "name": "!help",
+          "value": "Shows this menu",
+          "inline": "true"
+        },
+        {
+          "name": "!info",
+          "value": "Shows some info",
+          "inline": "true"
+        },
+        {
+          "name": "!setstatus",
+          "value": "Set bot's status",
+          "inline": "true"
+        },
+        {
+          "name": "!ufc",
+          "value": "!ufc [Fighter Name] exp: !ufc Conor McGregor",
+          "inline": "true"
+        },
+        {
+          "name": "!ufcfight",
+          "value": "!ufcfight [Fight Date] exp: !ufcfight Jul 28, 2018",
+          "inline": "true"
+        }
+      ],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "7942fe4c-dffa-4146-8cab-d254b3d80d5d"
+        }
+      ],
+      "x": 333,
+      "y": 134,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "1FFF57",
+        "Help ",
+        "",
+        "UFC Bot",
+        "",
+        "",
+        "You can get Commands from here.",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "show info",
+      "guid": "5053a44d-4a5e-460a-974d-da0cc07aac7c",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "2224944a-561a-4fa1-824b-2f31ea37c836"
+        }
+      ],
+      "x": 364,
+      "y": 320,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.DefaultChannel.id}",
+        "Command Author: ${dbsVars.CommandAuthor.displayName}\nTagged author: <@${dbsVars.CommandAuthor.id}>",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "setstatus",
+      "guid": "f77f57d9-c832-46d9-8bf0-b514bc1168e1",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "6bbe1c82-6197-45af-8cee-384957f92603"
+          ]
+        }
+      ],
+      "x": 576,
+      "y": 132,
+      "perms": []
+    },
+    {
+      "type": "response",
+      "name": "Yrü Yol olsun",
+      "guid": "d35b5e8c-e12a-4ce8-b51e-b34234925d16",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "64f6d7e3-1e12-474a-a87a-c61c5f6112e0"
+        }
+      ],
+      "x": 1192,
+      "y": 214,
+      "rtype": "Bot Action",
+      "rsubtype": "Set Bot Activity",
+      "formdata": [
+        "${tempVars.Silivri}",
+        "WATCHING",
+        ""
+      ],
+      "formnames": [
+        "activityname",
+        "activitytype",
+        "streamurl"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "ekle",
+      "guid": "64f6d7e3-1e12-474a-a87a-c61c5f6112e0",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "Silivri",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "d35b5e8c-e12a-4ce8-b51e-b34234925d16"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "6bbe1c82-6197-45af-8cee-384957f92603"
+        }
+      ],
+      "x": 982,
+      "y": 172,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "Silivri",
+        "Text",
+        "temp",
+        "1"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "checkuserperm",
+      "guid": "6bbe1c82-6197-45af-8cee-384957f92603",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "has perms",
+          "connections": [
+            "64f6d7e3-1e12-474a-a87a-c61c5f6112e0"
+          ]
+        },
+        {
+          "label": "doesn't have perms",
+          "connections": [
+            "e5be13f9-9e14-496b-a375-61d4d7755ea5"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "f77f57d9-c832-46d9-8bf0-b514bc1168e1"
+        }
+      ],
+      "x": 744,
+      "y": 224,
+      "rtype": "User Action",
+      "rsubtype": "Check User Permissions",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        [
+          "ADMINISTRATOR"
+        ]
+      ],
+      "formnames": [
+        "user",
+        "permissions"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "ufc",
+      "guid": "07679081-9c61-4e87-80f5-834150646914",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "2728514b-9945-46c6-bfc2-c07e9035db40"
+          ]
+        }
+      ],
+      "x": 591,
+      "y": 674
+    },
+    {
+      "type": "response",
+      "name": "ekle_1",
+      "guid": "2728514b-9945-46c6-bfc2-c07e9035db40",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "Fighter",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "df15f9d2-7b70-458e-bb5d-619d64a10061"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "07679081-9c61-4e87-80f5-834150646914"
+        }
+      ],
+      "x": 832,
+      "y": 742,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "Fighter",
+        "Text",
+        "temp",
+        "0"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "GetRow",
+      "guid": "df15f9d2-7b70-458e-bb5d-619d64a10061",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "row is found",
+          "connections": [
+            "98070e99-5010-494b-9c6b-5b9793fd9446"
+          ]
+        },
+        {
+          "label": "row not found",
+          "connections": [
+            "a5d9bce6-0138-49f1-bfb7-74d5535b52c3"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "2728514b-9945-46c6-bfc2-c07e9035db40"
+        }
+      ],
+      "x": 1038,
+      "y": 561,
+      "rtype": "Spreadsheet",
+      "rsubtype": "Get Row",
+      "formdata": [
+        "ALL UFC FIGHTERS 2_23_2016 SHERDOG.COM - Sheet1.csv",
+        "name",
+        "${tempVars.Fighter}",
+        "fighterrow",
+        "temp"
+      ],
+      "formnames": [
+        "selectedsheet",
+        "colheader",
+        "colval",
+        "rowvariable",
+        "saveVarType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "Show Fighter Info",
+      "guid": "98070e99-5010-494b-9c6b-5b9793fd9446",
+      "reactionFields": [],
+      "embedfields": [
+        {
+          "name": "Fighter's Name: ",
+          "value": "${tempVars.fighterrow.name}",
+          "inline": "true"
+        },
+        {
+          "name": "Fighter's Birth Date: ",
+          "value": "${tempVars.fighterrow.birth_date}",
+          "inline": "true"
+        },
+        {
+          "name": "Fighter's Height: ",
+          "value": "${tempVars.fighterrow.height}",
+          "inline": "true"
+        },
+        {
+          "name": "Fighter's Weight:",
+          "value": "${tempVars.fighterrow.weight}",
+          "inline": "true"
+        },
+        {
+          "name": "Fighter's Class:",
+          "value": "${tempVars.fighterrow.class}",
+          "inline": "true"
+        },
+        {
+          "name": "Fighter's Country: ",
+          "value": "${tempVars.fighterrow.country}",
+          "inline": "true"
+        },
+        {
+          "name": "Fighter's Nick Name: ",
+          "value": "${tempVars.fighterrow.nick}",
+          "inline": "true"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "df15f9d2-7b70-458e-bb5d-619d64a10061"
+        }
+      ],
+      "x": 1250,
+      "y": 509,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "A7FF2B",
+        "${tempVars.fighterrow.name}",
+        "",
+        "${dbsVars.CommandAuthor.displayName}",
+        "",
+        "",
+        "Here are the details about Fighter: ",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "hakket_1",
+      "guid": "a5d9bce6-0138-49f1-bfb7-74d5535b52c3",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "df15f9d2-7b70-458e-bb5d-619d64a10061"
+        }
+      ],
+      "x": 1316,
+      "y": 682,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.DefaultChannel.id}",
+        "Can't Find The ${tempVars.Fighter}",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "ufcfight",
+      "guid": "7bcd4606-da71-424c-bb1a-dd11b4c0310a",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "1799e7da-ba0d-4953-b950-396db4ee7e65"
+          ]
+        }
+      ],
+      "x": 576,
+      "y": 922
+    },
+    {
+      "type": "response",
+      "name": "ekle_1_1",
+      "guid": "1799e7da-ba0d-4953-b950-396db4ee7e65",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "Fight",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "83ec3993-6268-4855-9cce-da878cc3bc96"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "7bcd4606-da71-424c-bb1a-dd11b4c0310a"
+        }
+      ],
+      "x": 802,
+      "y": 920,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "Fight",
+        "Text",
+        "temp",
+        "0"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "get",
+      "guid": "83ec3993-6268-4855-9cce-da878cc3bc96",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "row is found",
+          "connections": [
+            "d9868819-4fc8-4f6d-b303-de5f58217504"
+          ]
+        },
+        {
+          "label": "row not found",
+          "connections": [
+            "8f25aaef-9dcb-4f7d-bfdc-f4d05a96bb86"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "1799e7da-ba0d-4953-b950-396db4ee7e65"
+        }
+      ],
+      "x": 1014,
+      "y": 1040,
+      "rtype": "Spreadsheet",
+      "rsubtype": "Get Row",
+      "formdata": [
+        "allUFCfights.csv",
+        "date",
+        "${tempVars.Fight}",
+        "fightdate",
+        "temp"
+      ],
+      "formnames": [
+        "selectedsheet",
+        "colheader",
+        "colval",
+        "rowvariable",
+        "saveVarType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "Show Fighter Info_1",
+      "guid": "d9868819-4fc8-4f6d-b303-de5f58217504",
+      "reactionFields": [],
+      "embedfields": [
+        {
+          "name": "Fighter 1's Name: ",
+          "value": "${tempVars.fightdate.fighter1}",
+          "inline": "true"
+        },
+        {
+          "name": "Fighter 2's Name: ",
+          "value": "${tempVars.fightdate.fighter2}",
+          "inline": "true"
+        },
+        {
+          "name": "How many Round it Last: ",
+          "value": "${tempVars.fightdate.round_end}",
+          "inline": "true"
+        },
+        {
+          "name": "Fight Event: ",
+          "value": "${tempVars.fightdate.event}",
+          "inline": "true"
+        },
+        {
+          "name": "Fight's Weight:",
+          "value": "${tempVars.fightdate.weight}",
+          "inline": "true"
+        },
+        {
+          "name": "Fight's Method",
+          "value": "${tempVars.fightdate.method}",
+          "inline": "true"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "83ec3993-6268-4855-9cce-da878cc3bc96"
+        }
+      ],
+      "x": 1274,
+      "y": 880,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "A7FF2B",
+        "${tempVars.fightdate.date}",
+        "",
+        "${dbsVars.CommandAuthor.displayName}",
+        "",
+        "",
+        "Here are the details about Fight: ",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "hakket_1_1",
+      "guid": "8f25aaef-9dcb-4f7d-bfdc-f4d05a96bb86",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "83ec3993-6268-4855-9cce-da878cc3bc96"
+        }
+      ],
+      "x": 1308,
+      "y": 1154,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.DefaultChannel.id}",
+        "Can't Get The Fight",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "hakket_1_1_1",
+      "guid": "e5be13f9-9e14-496b-a375-61d4d7755ea5",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "6bbe1c82-6197-45af-8cee-384957f92603"
+        }
+      ],
+      "x": 1004,
+      "y": 344,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.DefaultChannel.id}",
+        "You don't have perm.",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "Create Role",
+      "guid": "7eba8c8a-afa1-4c86-9af5-3ff384541117",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "61624edf-9f28-40df-b9d1-49add0f39f2b"
+        }
+      ],
+      "x": 780,
+      "y": 1222,
+      "rtype": "Server Action",
+      "rsubtype": "Add Role to Server",
+      "formdata": [
+        "${tempVars.Role Name}",
+        "FFFFFF",
+        "",
+        "false",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "rolename",
+        "color",
+        "position",
+        "hoist",
+        "mentionable",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "addrole",
+      "guid": "8ef73c80-433a-4952-b7c5-3c2db92694d4",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "7a0f2765-6fa9-4c65-b61e-06e358223a5e"
+          ]
+        }
+      ],
+      "x": 116,
+      "y": 1166,
+      "perms": []
+    },
+    {
+      "type": "response",
+      "name": "Check Perm",
+      "guid": "61624edf-9f28-40df-b9d1-49add0f39f2b",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "has perms",
+          "connections": [
+            "7eba8c8a-afa1-4c86-9af5-3ff384541117"
+          ]
+        },
+        {
+          "label": "doesn't have perms",
+          "connections": [
+            "79b9951c-ecee-4dd9-8bad-00f040176d48"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "7a0f2765-6fa9-4c65-b61e-06e358223a5e"
+        }
+      ],
+      "x": 580,
+      "y": 1346,
+      "rtype": "User Action",
+      "rsubtype": "Check User Permissions",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        [
+          "ADMINISTRATOR",
+          "KICK_MEMBERS",
+          "BAN_MEMBERS",
+          "MANAGE_CHANNELS",
+          "MANAGE_GUILD"
+        ]
+      ],
+      "formnames": [
+        "user",
+        "permissions"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "hakket_1_1_1_1",
+      "guid": "79b9951c-ecee-4dd9-8bad-00f040176d48",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "61624edf-9f28-40df-b9d1-49add0f39f2b"
+        }
+      ],
+      "x": 806,
+      "y": 1424,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.DefaultChannel.id}",
+        "You don't have perm.",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "Role NAME",
+      "guid": "7a0f2765-6fa9-4c65-b61e-06e358223a5e",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "Role Name",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "61624edf-9f28-40df-b9d1-49add0f39f2b"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "8ef73c80-433a-4952-b7c5-3c2db92694d4"
+        }
+      ],
+      "x": 330,
+      "y": 1236,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "Role Name",
+        "Text",
+        "temp",
+        "1"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ]
+    }
+  ]
+}
